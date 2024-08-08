@@ -1,0 +1,202 @@
+// html code 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Card UI Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="card front-face">
+                <header>
+                    <span class="logo">
+                        <img src="Logo.png" alt="Mastercard Logo" />
+                        <h5>Master card</h5>
+                    </span>
+                    <img src="chip.png" alt="Chip" class="chip" />
+                </header>
+                <div class="card-detail">
+                    <div class="name-number">
+                        <h6>Card Number</h6>
+                        <h5 class="number">8050 2030 3020 5040</h5>
+                        <h5 class="name">Manish Yadav</h5>
+                    </div>
+                    <div class="valid-date">
+                        <h6>Valid Thru</h6>
+                        <h5>05/28</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card back-face">
+                <h6>
+                    for customer service call +91894118818 or try to reach at bank email 
+                </h6>
+                <span class="magnetic-strip"></span>
+                <div class="signature"><i>Signature</i></div>
+                <i>005</i>
+            </div>
+            <!-- <h5>
+                for contact manish call +91 8941018818 or mail at manish.productive@gmail.com
+            </h5> -->
+        </div>
+    </section>
+</body>
+
+</html>
+
+
+
+  // #css code 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&family=IM+Fell+English+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Poppins", sans-serif;
+ }
+
+ section {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: #fff;
+
+     position: relative;
+     min-height: 100vh;
+     width: 100%;
+     background: #121321;
+     perspective: 1000px;
+ }
+
+ section::before {
+     content: "";
+     position: absolute;
+     height: 240px;
+     width: 240px;
+     border-radius: 50%;
+     transform: translate(-150px, -100px);
+
+     background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+ }
+
+ section::after {
+     content: "";
+     position: absolute;
+     height: 240px;
+     width: 240px;
+     border-radius: 50%;
+     transform: translate(150px, 100px);
+     background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+ }
+
+ .container {
+     height: 225px;
+     width: 375px;
+     position: relative;
+     z-index: 100;
+     transition: 0.6s;
+     transform-style: preserve-3d;
+ }
+ .container:hover {
+    transform: rotateY(180deg)
+
+ }
+
+ .container .card {
+    position:absolute;
+     height: 100%;
+     width: 100%;
+     padding: 25px;
+     border-radius: 25px;
+     backdrop-filter: blur(25px);
+     background: rgba(255, 255, 255, 0.1);
+     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     backface-visibility: hidden;
+ }
+
+ .front-face header,
+ .front-face .logo {
+     display: flex;
+     align-items: center;
+ }
+
+ .front-face header {
+     justify-content: space-between;
+ }
+
+ .front-face .logo img {
+     width: 48px;
+     margin-right: 10px;
+ }
+
+ h5 {
+     font-size: 16px;
+     font-weight: 400px;
+ }
+
+ .front-face .chip {
+     width: 50px;
+ }
+
+ .front-face .card-details {
+     display: flex;
+     margin-top: 40 px;
+     align-items: flex-end;
+     justify-content: space-between;
+ }
+
+ h6 {
+     font-size: 10px;
+     font-weight: 400;
+ }
+
+ h5.number {
+     font-size: 18px;
+     letter-spacing: 1px;
+ }
+
+ h5.name {
+     margin-top: 20px;
+     letter-spacing: 1px;
+ }
+
+ .card.back-face {
+     border: none;
+     padding: 15px 25px 25px 25px;
+     transform: rotateY(180deg);
+ }
+
+ .card.back-face h6 {
+     font-size: 8px;
+ }
+
+ .card.back-face .magnetic-strip {
+     position: absolute;
+     top: 40px;
+     left: 0;
+
+
+     height: 45px;
+     width: 100%;
+     background: #000;
+
+ }
+
+ .card.back-face .signature {
+     margin-top: 80px;
+     height: 40px;
+     left: 0;
+     width: 85%;
+     border-radius: 6px;
+     background: #fff;
+ }
+  
+  
